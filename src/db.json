@@ -1,0 +1,13 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "laptop"
+        },
+        {
+            "id": 2,
+            "name": "laptop"
+        }
+    ],
+		"currentId": 2
+}
