@@ -59,5 +59,41 @@ $('#create-form').on('submit', function() {
 			$('#get-request').click();
 		}
 	});
+});
 
+
+$('table').on('click', '.update-button', function() {
+	var rowElement = $(this).closest('tr');
+	var id = rowElement.find('.id').text();
+	var newName = rowElement.find('.name').val();
+
+	console.log(newName);
+
+	$.ajax({
+		url: '/products/' + id,
+		method: 'PUT',
+		contenType: 'application/json',
+		data: {newName: newName},
+		success: function(response) {
+			console.log(response);
+			$('#get-request').click();
+		},
+
+	});
+});
+
+// DELETE BUTTON
+$('table').on('click', '.delete-button', function() {
+	var rowElement = $(this).closest('tr');
+	var id = rowElement.find('.id').text();
+
+	$.ajax({
+		url: '/products/' + id,
+		method: 'DELETE',
+		contentType: 'application/json',
+		success: function(response) {
+			console.log(response);
+			$('#get-request').click();
+		}
+	});
 });

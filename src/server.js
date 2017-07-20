@@ -35,6 +35,36 @@ app.post('/products', (req, res) => {
 	res.send('Successfully created product');
 });
 
+app.put('/products/:id', (req, res) => {
+	const { id } = req.params;
+	const newName  = req.body.newName;
+	var found = false;
+
+	console.log(newName);
+	
+	products.forEach((product, i) => {
+		if(!found && product.id === Number(id)) {
+			product.name = newName;
+		}
+	});
+	
+	res.send('Successfully updated product');
+});
+
+app.delete('/products/:id', (req, res) => {
+	var id = req.params.id;
+	
+	var found = false;
+
+	products.forEach(function(product, index) {
+		if(!found && product.id === Number(id)) {
+			products.splice(index, 1);
+		}
+	});
+
+	res.send('successfully deleted product');
+});
+
 app.listen(app.get('port'), () => {
 	console.log(`server on port ${app.get('port')}`);	
 });
