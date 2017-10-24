@@ -1,13 +1,12 @@
 {
-    "products": [
-        {
-            "id": 1,
-            "name": "laptop"
-        },
-        {
-            "id": 2,
-            "name": "laptop"
-        }
-    ],
-		"currentId": 2
+  "products": [
+    {
+      "id": 0,
+      "name": "laptop"
+    },
+    {
+      "id": 1,
+      "name": "laptop"
+    }
+  ]
 }
